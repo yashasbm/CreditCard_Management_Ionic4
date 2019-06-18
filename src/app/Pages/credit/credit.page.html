@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Credit Cards
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-list>
+  
+  
+      <ion-item-sliding *ngFor="let item of cards" >
+        <ion-item lines="inset" button [routerLink]="['/add-cards', item.id]">
+          <div class="cardsContainer">
+  
+            <!--Card nick name-->
+            <ion-chip class="cardNickName">
+              <ion-icon slot="start" name="card"></ion-icon>
+              <ion-label>{{item.cardNickName}}</ion-label>
+            </ion-chip>
+            <div>
+  
+            </div>
+  
+            <!--bank name-->
+            <div class="bankName">
+              <ion-note>Bank Name</ion-note>
+              <br>
+              <ion-text>
+                {{item.cardBank}}
+              </ion-text>
+            </div>
+  
+            <!--card cardNumber-->
+            <div class="cardNumber">
+              <ion-note>Card Number</ion-note>
+              <br>
+              <ion-text>
+                {{item.cardNumber}}
+              </ion-text>
+  
+            </div>
+  
+            <!--card exp details-->
+            <div class="expDetails">
+              <div class="expmonth">
+                <ion-note>Exp Month</ion-note>
+                <br>
+                <ion-text>
+                  {{item.cardExpMonth}}
+                </ion-text>
+  
+              </div>
+              <div class="expyear">
+                <ion-note>Exp Year</ion-note>
+                <br>
+                <ion-text>
+                  {{item.cardExpYear}}
+                </ion-text>
+              </div>
+            </div>
+  
+            <br><br>
+  
+            <!--name on card-->
+            <div class="cardName">
+              <ion-note>Name</ion-note>
+              <br>
+              <ion-text>
+                {{item.cardName}}
+              </ion-text>
+            </div>
+          </div>
+        </ion-item>
+  
+        <ion-item-options side="end">
+          <ion-item-option (click)="remove(item)" color="danger">
+            Delete
+            <ion-icon name="close" slot="end"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+  
+    </ion-list>
+  
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="/add-cards" routerDirection="forward">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+  </ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "CreditCardManagement",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

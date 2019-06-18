@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cards"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Card Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label>Card Type</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="cards.cardType">
+        <ion-select-option value="credit">Credit</ion-select-option>
+        <ion-select-option value="debit">Debit</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Bank Name</ion-label>
+      <ion-input required type="text" [(ngModel)]="cards.cardBank"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Card Number</ion-label>
+      <ion-input required type="number" [(ngModel)]="cards.cardNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Card Expiration Month</ion-label>
+      <ion-input required type="number" [(ngModel)]="cards.cardExpMonth"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Card Expiration Year</ion-label>
+      <ion-input required type="number" [(ngModel)]="cards.cardExpYear"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Name on Card</ion-label>
+      <ion-input required type="text" [(ngModel)]="cards.cardName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Card Nick Name</ion-label>
+      <ion-input required type="text" [(ngModel)]="cards.cardNickName"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+  <ion-button expand="full" (click)="saveCard()">Add Card</ion-button>
+</ion-content>
